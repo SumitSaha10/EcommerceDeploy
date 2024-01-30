@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.profile {
+    display: flex;
+
+}
+
+.profile i {
+    color: rgb(0, 157, 255);
+    font-size: 2rem;
+    margin-left: 1.2rem;
+
+}
+
+
+
+.sidebar h3 {
+    margin-top: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sidebar h3 link:hover {
+    color: white;
+    background-color: rgb(0, 157, 255);
+}
+
+
+.personal-info {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    width: 70%;
+    margin-left: 1rem;
+}
+
+.personal-info .my-account i {
+    color: rgb(0, 157, 255);
+    margin-right: 0.5rem;
+}
+
+.personal-info .personal i {
+    color: rgb(0, 157, 255);
+    margin-right: 0.5rem;
+}
+
+@media(width:450px) {
+    .personal-info .personal {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,47 @@
+.payments {
+    background-color: white;
+
+}
+
+.payments__container>h1 {
+    text-align: center;
+    padding: 10px;
+    font-weight: 400;
+    background-color: rgb(234, 237, 237);
+    border-bottom: 1px solid lightgray;
+}
+
+.payments__container>h1 a {
+    text-decoration: none;
+}
+
+.payments__section {
+    display: flex;
+    padding: 20px;
+    margin: 0 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.payments__title {
+    flex: 0.2;
+}
+
+
+
+.payments__address,
+.payments__items,
+.payments__details {
+    flex: 0.8;
+}
+
+@media(max-width:500px) {
+    .payments__title h3 {
+        font-size: 15px;
+    }
+}
+
+@media(max-width:400px) {
+    .payments__title h3 {
+        font-size: 12px;
+    }
+}
