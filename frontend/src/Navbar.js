@@ -63,6 +63,9 @@ export default function Navbar() {
               <Link className="nav-link text-light" to="/about">About</Link>
             </li>
             <li className="nav-item">
+              <Link className="nav-link text-light" to="/adminlogin">Admin</Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link text-light" to="/cart"><i className="fa-solid fa-cart-shopping"></i>
                 <span>{cartItems.length === 0 ? "" : cartItems.length}</span>
               </Link>

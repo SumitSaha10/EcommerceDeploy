@@ -122,7 +122,7 @@ const AdminCreateProduct = () => {
             })
             await response.json()
             showToast("Product Created Successfully", "Your Product Created Successfully", 3000, true, "success", 'top')
-            window.location.reload()
+            navigate("/admincreateproduct")
         } catch (error) {
             alert("Some error occured")
         }
