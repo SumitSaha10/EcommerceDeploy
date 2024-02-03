@@ -123,6 +123,8 @@ const AdminCreateProduct = () => {
             await response.json()
             showToast("Product Created Successfully", "Your Product Created Successfully", 3000, true, "success", 'top')
             navigate("/admincreateproduct")
+            getallProducts()
+
         } catch (error) {
             alert("Some error occured")
         }
@@ -144,6 +146,7 @@ const AdminCreateProduct = () => {
             console.log(json)
             formFunctionClose()
             showToast("Product Updated Successfully", "Your Product Updated Successfully", 3000, true, "success", 'top')
+            getallProducts()
 
         } catch (error) {
             alert("Some error occured")
@@ -162,8 +165,9 @@ const AdminCreateProduct = () => {
             })
             const json = await res.json()
             console.log(json)
+            confirmClose()
             showToast("Product Deleted Successfully", "Your Product Deleted Successfully", 3000, true, "warning", 'top')
-
+            getallProducts()
 
         } catch (error) {
             alert("Some error occured")
