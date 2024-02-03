@@ -144,9 +144,7 @@ const AdminCreateProduct = () => {
             console.log(json)
             formFunctionClose()
             showToast("Product Updated Successfully", "Your Product Updated Successfully", 3000, true, "success", 'top')
-            setTimeout(() => {
-                window.location.reload()
-            }, 1500);
+
         } catch (error) {
             alert("Some error occured")
         }
@@ -165,9 +163,7 @@ const AdminCreateProduct = () => {
             const json = await res.json()
             console.log(json)
             showToast("Product Deleted Successfully", "Your Product Deleted Successfully", 3000, true, "warning", 'top')
-            setTimeout(() => {
-                window.location.reload()
-            }, 1500);
+
 
         } catch (error) {
             alert("Some error occured")
