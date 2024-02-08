@@ -19,11 +19,6 @@ app.use(cors({
 }))
 
 //static files
-
-
-
-
-
 app.post("/checkout", async (req, res) => {
     try {
         const session = await stripe.checkout.sessions.create({
@@ -59,13 +54,6 @@ app.use('/api/admin90', require("./routes/adminProduct"))
 app.get("/", (req, res) => {
     app.use(express.static(path.resolve(__dirname, "frontend", "build")));
     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-});
-
-app.get('/order/success', async (req, res) => {
-    const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
-    const customer = await stripe.customers.retrieve(session.customer);
-
-    res.send(`<html><body><h1>Thanks for your order, ${customer.name}!</h1></body></html>`);
 });
 
 app.listen(port, () => {
