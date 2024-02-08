@@ -42,7 +42,7 @@ app.post("/checkout", async (req, res) => {
                 }
             }),
             success_url: "https://ecommerce-ruddy-six.vercel.app?session_id={CHECKOUT_SESSION_ID}",
-            cancel_url: "http://localhost:6000/cancel"
+            cancel_url: "https://ecommerce-ruddy-six.vercel.app"
         })
         res.json({ url: session.url })
     } catch (error) {
