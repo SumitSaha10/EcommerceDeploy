@@ -41,7 +41,7 @@ app.post("/checkout", async (req, res) => {
                     quantity: item.productQuantity * 1
                 }
             }),
-            success_url: "https://ecommerce-ruddy-six.vercel.app/order/success?session_id={CHECKOUT_SESSION_ID}",
+            success_url: "https://ecommerce-ruddy-six.vercel.app?session_id={CHECKOUT_SESSION_ID}",
             cancel_url: "http://localhost:6000/cancel"
         })
         res.json({ url: session.url })
