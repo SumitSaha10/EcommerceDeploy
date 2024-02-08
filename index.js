@@ -41,7 +41,7 @@ app.post("/checkout", async (req, res) => {
                     quantity: item.productQuantity * 1
                 }
             }),
-            success_url: "http://localhost:6000/orders",
+            success_url: "https://ecommerce-ruddy-six.vercel.app/order/success?session_id={CHECKOUT_SESSION_ID}",
             cancel_url: "http://localhost:6000/cancel"
         })
         res.json({ url: session.url })
@@ -59,6 +59,13 @@ app.use('/api/admin90', require("./routes/adminProduct"))
 app.get("/", (req, res) => {
     app.use(express.static(path.resolve(__dirname, "frontend", "build")));
     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+});
+
+app.get('/order/success', async (req, res) => {
+    const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
+    const customer = await stripe.customers.retrieve(session.customer);
+
+    res.send(`<html><body><h1>Thanks for your order, ${customer.name}!</h1></body></html>`);
 });
 
 app.listen(port, () => {
